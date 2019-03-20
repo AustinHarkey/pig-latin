@@ -5,17 +5,15 @@ let vowels = ['a', 'e', 'i', 'o', 'u'];
 
 submit.addEventListener('click', function() {
     let outputString;
-    
+    let inputSplit = input.value.split("");
+    let firstLetter = inputSplit.shift();
+
+    // if it starts with a vowel 
     if(firstLetter == 'a' || firstLetter == 'e' || firstLetter == 'i' || firstLetter == 'o' || firstLetter == 'u') {
         outputString = input.value + '-ay';
-        console.log(outputString);
-    } else {
-        let inputSplit = input.value.split("");
-        let firstLetter = inputSplit.shift();
+        output.innerText = outputString;
+    } else {   
+        outputString = inputSplit.join('') + '-' + firstLetter + 'ay';
+        output.innerText = outputString;
     }
-    
-
-    // console.log(inputSplit);
-    // console.log(firstLetter);
-    
 });
